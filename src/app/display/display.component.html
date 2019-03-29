@@ -1,0 +1,61 @@
+<!-- <ng-progress></ng-progress>
+<div class="container-fluid">
+  <div class="row">
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" required class="form-control" id="name">
+      </div>
+
+        <div [hidden] = "name.valid || name.pristine" class="alert alert-danger">
+          <p>UserName is Required</p>
+        </div>
+
+      <button type="submit"  class="btn btn-success btn-lg">Find GitHub User</button>
+    </form> 
+    <h1>Remember to add search for a specific repository of a user</h1>
+  </div>
+
+  <div class="row">
+    <div class = "text-center text -lg">
+      <img [src]="user.avatar" alt="">
+      <p>{{user.userName}}</p>
+      <p>{{user.name}}</p>
+      <p>{{user.bio}}</p>
+      <p>{{user.repositories}}</p>
+      <p>{{user.followers}}</p>
+      <p>{{user.following}}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>WELCOME TO GITHUBSEARCH</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="well" id="input">
+          <div class="input-form">
+            <input placeholder="Enter Username" [(ngModel)]="userName">
+            <button (click)="userRequest()">SEARCH</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="well" id="display">
+          <img [src]="avatarUrl">
+          <div class="information" style="float:right">
+            <h3>{{githubData.name}}</h3>
+  
+              <h4>Location:{{githubData.location}}</h4>
+              <h4>Repositories: {{githubData.public_repos}}</h4>
+              <h4>Followers: {{githubData.followers}}</h4>
+              <h4>Following: {{githubData.following}}</h4>
+              <h4><a [href]="githubData.html_url">View the Page Here:</a></h4>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
